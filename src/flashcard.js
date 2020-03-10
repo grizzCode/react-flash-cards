@@ -7,12 +7,7 @@ const FlashCards = (props) => (
     <Card key={`card-${card.id}`}>
          <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            Front
-          </Button>
-          <Button basic color='red'>
-            Back
-          </Button>
+        <Checkbox toggle label='Flip Card'/>
         </div>
       </Card.Content>
       <Card.Content>
@@ -22,19 +17,11 @@ const FlashCards = (props) => (
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Checkbox toggle label='I know this one!'/>
-          
-          
-          {/* <Button basic color='green'>
-            Approve
-          </Button>
-          <Button basic color='red'>
-            Decline
-          </Button> */}
+          {/* <Checkbox label='I know this one!'/> */}
         </div>
       </Card.Content>
     </Card>
-    ))};
+    ))}
   </Card.Group>
 )
 
