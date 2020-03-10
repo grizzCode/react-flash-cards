@@ -24,7 +24,7 @@ const FlashCards = (props) => (
 
           </div>
           <div className='iconPadding'>
-            <Icon bordered name='trash alternate' />
+            <Icon bordered name='trash alternate' onClick={() => props.deleteCard(card.id)} />
           </div>
         </Card.Content>
 

@@ -30,6 +30,15 @@ class App extends React.Component {
     });
   }
 
+  deleteCard = (id) => {
+    let { cards } = this.state
+    let filteredArr = cards.filter(card => card.id !== id);
+    
+    this.setState({
+      cards: filteredArr
+    });
+  }
+
   render() {
     const { showForm } = this.state
     return (
@@ -38,7 +47,7 @@ class App extends React.Component {
       <Button color='teal' onClick={this.toggleForm}>New Card</Button>
       </div>
       {showForm ? <NewCard addCard={this.newCard}/> : null}
-      <FlashCards cards={this.state.cards}/>
+      <FlashCards cards={this.state.cards} deleteCard={this.deleteCard}/>
     </Container>
     )
   }
