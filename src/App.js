@@ -20,6 +20,15 @@ class App extends React.Component {
     showForm: !this.state.showForm
   })
 }
+  newCard = (card) => {
+    //called by handleSubmit function in form
+    console.log(card)
+    let newArr = [card, ...this.state.cards]
+    
+    this.setState({
+      cards: newArr
+    });
+  }
 
   render() {
     const { showForm } = this.state
@@ -28,7 +37,7 @@ class App extends React.Component {
       <div className="top">
       <Button color='teal' onClick={this.toggleForm}>New Card</Button>
       </div>
-      {showForm ? <NewCard/> : null}
+      {showForm ? <NewCard addCard={this.newCard}/> : null}
       <FlashCards cards={this.state.cards}/>
     </Container>
     )

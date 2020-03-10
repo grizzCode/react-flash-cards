@@ -13,12 +13,8 @@ class NewCard extends React.Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('submit working')
-    console.log(this.state)
-
-    //send up to App.js state:
-    //##### CODE ######
+    //send up to App.js state via function passed down by props:
+    this.props.addCard(this.state)
 
     //clear form once submitted
     this.setState({
@@ -28,9 +24,7 @@ class NewCard extends React.Component {
     })
   }
 
-  handleChange = (event) => {
-   //remember that we get passed an event object when onClick is triggered, and we want the data in "target"
-    
+  handleChange = (event) => {   
     //call random ID generator
     let x = this.generateId()
     this.setState({
