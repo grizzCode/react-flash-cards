@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FlashCards from './flashcard'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    cards: [
+      { front: "Card Front", back: "Card Back", show: false, study: true },
+      { front: "Card Front 2", back: "Card Back 2", show: false, study: true },
+      { front: "Card Front 3", back: "Card Back 3", show: false, study: true }
+    ]
+  }
+
+  render() {
+    return (
+
+      <FlashCards cards={this.state.cards}/>
+
+    );
+  }
 }
-
 export default App;
