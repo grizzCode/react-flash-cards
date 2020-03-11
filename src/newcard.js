@@ -37,28 +37,29 @@ class NewCard extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <Form.Group>
-          <Form.TextArea
-            width={10}
-            label='Front of Card'
-            name='front'
-          // placeholder='Enter Name'
-          value={this.state.front}
-          onChange={this.handleChange}
-          />
-          <Form.TextArea
-            width={10}
-            label='Back of Card'
-            name='back'
-          // placeholder='Phone'
-          value={this.state.back}
-          onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.Button basic compact color='violet'>SUBMIT</Form.Button>
-        <hr />
-      </Form>
+     
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.TextArea
+              width={10}
+              name='front'
+            placeholder='Enter text for front of card.'
+            value={this.state.front}
+            onChange={this.handleChange}
+            />
+            <Form.TextArea
+              width={10}
+              placeholder='Enter text for back of card.'
+              name='back'
+            // placeholder='Phone'
+            value={this.state.back}
+            onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Button compact color='violet'>SUBMIT</Form.Button>
+          <hr />
+        </Form>
+     
     )
   }
 
