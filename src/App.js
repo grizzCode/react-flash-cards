@@ -7,9 +7,9 @@ import { Container, Button } from 'semantic-ui-react'
 class App extends React.Component {
   state = {
     cards: [
-      { id: 1, front: "Card Front", back: "Card Back", study: true },
-      { id: 2, front: "Card Front 2", back: "Card Back 2", study: true },
-      { id: 3, front: "Card Front 3", back: "Card Back 3", study: true }
+      { id: 1, front: "Card Front", back: "Card Back", study: true, flipped: false },
+      { id: 2, front: "Card Front 2", back: "Card Back 2", study: true , flipped: false },
+      { id: 3, front: "Card Front 3", back: "Card Back 3", study: true , flipped: true }
     ],
     showForm: false
   }
@@ -39,6 +39,23 @@ class App extends React.Component {
     });
   }
 
+  flipCard = (id) => {
+    let { cards } = this.state
+   
+
+    //locate object:
+    let arrFlip = cards.map(card => {
+      if (card.id === id) {
+        return {id: card.id, front: card.front, back: card.back, study: card.study, flipped: card.flipped = !card.flipped}
+      }
+      return card
+    });
+    this.setState({
+      cards: arrFlip
+    });
+  }
+
+
   render() {
     const { showForm } = this.state
     return (
@@ -47,7 +64,7 @@ class App extends React.Component {
       <Button color='teal' onClick={this.toggleForm}>New Card</Button>
       </div>
       {showForm ? <NewCard addCard={this.newCard}/> : null}
-      <FlashCards cards={this.state.cards} deleteCard={this.deleteCard}/>
+      <FlashCards cards={this.state.cards} deleteCard={this.deleteCard} flipCard={this.flipCard}/>
     </Container>
     )
   }

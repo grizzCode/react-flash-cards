@@ -30,7 +30,8 @@ class NewCard extends React.Component {
     this.setState({
   // The following format automatically sets what is in the [] as the key for the key : value pair. 
       id: x,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
+      flipped: false
     });
   }
 

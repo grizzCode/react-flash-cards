@@ -7,14 +7,15 @@ const FlashCards = (props) => (
       <Card key={`card-${card.id}`}>
         <Card.Content extra>
           <div className='ui two buttons'>
-            <Checkbox toggle label='Flip Card' />
+            <Checkbox toggle label='Flip Card'onChange={() => props.flipCard(card.id)} />
 
           </div>
         </Card.Content>
         <Card.Content>
           <Card.Description>
             <div className="cardText">
-              {card.front}
+              {/* Ternary here to toggle front / back */}
+              {card.flipped ? card.back : card.front}
             </div>
           </Card.Description>
         </Card.Content>
