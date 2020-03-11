@@ -56,7 +56,7 @@ class NewCard extends React.Component {
           onChange={this.handleChange}
           />
         </Form.Group>
-        <Form.Button basic color='green'>SUBMIT</Form.Button>
+        <Form.Button basic compact color='violet'>SUBMIT</Form.Button>
         <hr />
       </Form>
     )
