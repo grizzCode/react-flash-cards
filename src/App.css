@@ -40,6 +40,7 @@
 .top {
   margin-bottom: 30px;
   margin-top: 20px;
+  
 }
 
 .iconPadding {
@@ -50,3 +51,8 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
+body {
+  background-color: #dddddd!important;
+}
+
