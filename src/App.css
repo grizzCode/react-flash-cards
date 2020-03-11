@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.top {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.iconPadding {
+  margin-top: 15px;
+}
+
+.cardText {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
