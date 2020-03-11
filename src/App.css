@@ -40,6 +40,7 @@
 .top {
   margin-bottom: 30px;
   margin-top: 20px;
+  color: white;
   
 }
 
@@ -53,6 +54,6 @@
 }
 
 body {
-  background-color: #dddddd!important;
+  background-color: #3b3b3b!important;
 }
 
